@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+  <div style="padding-left: 70px; padding-top: 50px;">
+    <button routerLink="/customer">Post-Customer</button>
+    
+  </div>
+<div style="display: flex; justify-content: center; margin-top: 10%;">
+  
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone No</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let custom of cust">
+    <td>{{custom.name}}</td>
+    <td>{{custom.email}}</td>
+    <td>{{custom.phone}}</td>
+    <td style="display: flex;">
+      <button style="margin-left: 20px;" routerLink="/customer/{{custom.id}}">update</button>
+      <button style="margin-left: 20px;" (click)="deleting(custom.id)" >delete</button>
+    </td>
+  </tr>
+  </table>
+</div>

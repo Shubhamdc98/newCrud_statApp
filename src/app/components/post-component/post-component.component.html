@@ -1,0 +1,11 @@
+<div style="display: flex; justify-content: center; margin-top: 15%;">
+  <form [formGroup]="UpdateCustomerForm">
+    <label for="name">First name:</label><br>
+    <input type="text" id="name" name="name" formControlName="name"><br><br>
+    <label for="">Email</label><br>
+    <input type="email" id="email" name="email" formControlName="email"><br><br>
+    <label for="">Phone No</label><br>
+    <input type="phone" id="phone" name="phone" formControlName="phone"><br><br>
+    <button type="submit" (click)="submitted()" routerLink="">submit</button>
+  </form>
+</div>
